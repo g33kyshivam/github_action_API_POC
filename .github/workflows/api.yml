@@ -1,0 +1,12 @@
+name: api_scan
+# Based on only push event 
+on:
+  push:
+    branches: [ master ]
+jobs:
+  apiScan:
+    runs-on: ubuntu-latest  
+    steps:
+    - uses: actions/checkout@master
+    - name: trufflehog-actions-scan
+      uses: nathankleyn/trufflehog-actions-scan@master
